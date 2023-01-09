@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api, prefer_const_literals_to_create_immutables, unused_field, prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: library_private_types_in_public_api, prefer_const_literals_to_create_immutables, unused_field, prefer_const_constructors, sized_box_for_whitespace, annotate_overrides
 
 import 'dart:async';
 
@@ -21,13 +21,18 @@ class _SplashScreenState extends State<SplashScreen>
       AnimationController(duration: Duration(seconds: 3), vsync: this)
         ..repeat();
 
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
     Timer(
-        const Duration(seconds: 5),
+        const Duration(seconds: 3),
         () => Navigator.push(context,
             MaterialPageRoute(builder: (context) => HomePageScreen())));
   }
@@ -63,10 +68,7 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Text(
                   'Covid-19\nTracker App',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Colors.green),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ))
           ],
         ),

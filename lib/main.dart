@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
-            brightness: Brightness.dark,
-            primarySwatch: Colors.green,
+            brightness: Brightness.light,
+            primarySwatch: Colors.deepPurple,
           ),
           home: const SplashScreen(),
         );
