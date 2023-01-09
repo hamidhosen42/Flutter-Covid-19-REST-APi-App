@@ -15,9 +15,9 @@ class WorldVirusViewModel {
       throw Exception('Error');
     }
   }
-}
 
-Future<List<dynamic>> countriesListApi() async {
+
+  Future<List<dynamic>> countriesListApi() async {
   final response = await http.get(Uri.parse("https://disease.sh/v3/covid-19/countries"));
   if (response.statusCode == 200) {
     var data = jsonDecode(response.body.toString());
@@ -25,4 +25,6 @@ Future<List<dynamic>> countriesListApi() async {
   } else {
     throw Exception('Error');
   }
+}
+
 }

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             brightness: Brightness.light,
-            primarySwatch: Colors.deepPurple,
+            primarySwatch: Colors.green,
           ),
           home: const SplashScreen(),
         );
